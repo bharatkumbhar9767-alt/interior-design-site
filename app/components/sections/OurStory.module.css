@@ -77,7 +77,8 @@
 
 .founderPara { font-size: 15px; line-height: 1.6; color: var(--dark); font-weight: 500; max-width: 500px; margin-bottom: 40px; }
 
-.separator { display: flex; align-items: center; width: 100%; max-width: 500px; margin-bottom: 40px; }
+.separatorShort { display: flex; align-items: center; width: 100%; max-width: 250px; margin-bottom: 24px; }
+.separatorLong { display: flex; align-items: center; width: 100%; margin-bottom: 40px; }
 .sepLine { height: 1px; flex: 1; background: rgba(180, 144, 79, 0.4); }
 .sepDia { margin: 0 12px; display: flex; align-items: center; }
 .sepDia svg { width: 8px; height: 8px; }
@@ -86,62 +87,80 @@
 .threeCols { display: flex; gap: 20px; max-width: 550px; margin-bottom: 40px; }
 .storyCol { flex: 1; display: flex; flex-direction: column; border-right: 1px solid rgba(180,144,79,0.3); padding-right: 20px; }
 .storyCol:last-child { border-right: none; padding-right: 0; }
-.iconWrap { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(180,144,79,0.5); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background: rgba(255,255,255,0.4); }
-.iconWrap svg { width: 20px; height: 20px; }
+.iconWrap { width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid rgba(180,144,79,0.5); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background: rgba(220, 205, 185, 0.3); }
+.iconWrap svg { width: 28px; height: 28px; }
 .storyText { font-size: 11px; line-height: 1.6; color: var(--dark); }
 .storyText span { font-weight: 600; color: var(--gold); }
 
-/* RIGHT COL - IMAGE BOX */
-.imageBox {
-  position: relative;
-  width: 100%; height: 420px;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(180, 144, 79, 0.4);
-  /* Top-left corner arch */
+/* RIGHT COL - IMAGE BOX & NAMES */
+.founderCard {
+  border: 1px solid rgba(180, 144, 79, 0.5);
   border-radius: 200px 0 0 0;
-  padding: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  background: transparent;
+}
+.imageBox {
+  padding: 12px;
+  border-bottom: 1px solid rgba(180, 144, 79, 0.3);
 }
 .imageInner {
   position: relative;
-  width: 100%; height: 100%;
-  border-radius: 192px 0 0 0;
+  width: 100%; height: 360px;
+  border-radius: 188px 0 0 0;
   overflow: hidden;
 }
-
-/* RIGHT COL - NAMES */
 .namesBox {
-  display: flex; align-items: center; justify-content: center; gap: 30px;
-  border: 1px solid rgba(180,144,79,0.3);
-  padding: 20px; margin-bottom: 40px;
-  background: rgba(255,255,255,0.3);
+  display: flex; align-items: center; justify-content: center; gap: 20px;
+  padding: 20px;
 }
 .nameBlock { text-align: center; }
 .nameTitle { font-family: var(--serif); font-size: 18px; color: var(--dark); font-weight: 500; margin-bottom: 4px; }
 .nameSub { font-size: 10px; letter-spacing: 0.15em; color: var(--gold); font-weight: 600; text-transform: uppercase; }
 
+.nameSeparator { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50px; gap: 4px; padding: 0 10px; }
+.nameSepLine { width: 1px; flex: 1; background: rgba(180, 144, 79, 0.4); }
+
 /* RIGHT COL - TEXT & QUOTE */
-.gapText { font-size: 13px; line-height: 1.6; color: var(--dark); font-weight: 500; margin-bottom: 24px; padding-left: 24px; position: relative; }
-.gapTextLine { position: absolute; left: 0; top: -120px; bottom: 0; width: 1px; background: rgba(180,144,79,0.5); }
-.gapTextDia { position: absolute; left: -2.5px; top: 50%; transform: translateY(-50%) rotate(45deg); width: 6px; height: 6px; background: var(--gold); }
+.rightContentWrap { display: flex; gap: 30px; position: relative; }
+.rightVerticalLine { width: 1px; background: rgba(180,144,79,0.5); display: flex; flex-direction: column; align-items: center; position: relative; }
+.vdia1 { position: absolute; top: 12px; }
+.vdia2 { position: absolute; top: 130px; }
+.vdia1 svg, .vdia2 svg { width: 8px; height: 8px; }
+.rightContent { flex: 1; }
+
+.gapText { font-size: 13px; line-height: 1.6; color: var(--dark); font-weight: 500; margin-bottom: 24px; padding-left: 0; }
 
 .missionBox {
-  display: flex; align-items: center; gap: 20px;
+  position: relative;
+  display: flex; align-items: center; gap: 0;
   background: rgba(246,240,230,0.8);
   border: 1px solid rgba(180,144,79,0.3);
   border-radius: 12px;
-  padding: 24px;
+  padding: 16px 20px 16px 44px;
   margin-bottom: 40px;
-  margin-left: 20px;
+  margin-left: 30px;
+  max-width: 420px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 .missionIcon {
-  width: 60px; height: 60px; border-radius: 50%;
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(180,144,79,0.5);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px; height: 56px;
+  background: #fdfaf5;
+  border: 1px solid rgba(180,144,79,0.6);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
 }
-.missionIcon svg { width: 32px; height: 32px; }
+.missionIcon::before {
+  content: "";
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px solid rgba(180,144,79,0.3);
+  border-radius: 50%;
+}
+.missionIcon svg { width: 26px; height: 26px; position: relative; zIndex: 1; }
 .missionText { font-size: 12px; line-height: 1.6; color: var(--dark); font-weight: 500; }
 
 .quoteBlock {

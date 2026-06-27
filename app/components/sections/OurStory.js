@@ -48,11 +48,19 @@ export default function OurStory() {
           <h2 className={styles.title}>Our Story.</h2>
           <h3 className={styles.subtitle}>Built from experience.<br/>Driven by belief.</h3>
           
+          <div className={styles.separatorShort}>
+            <div className={styles.sepLine} />
+            <div className={styles.sepDia}>
+              <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
+            </div>
+            <div className={styles.sepLine} />
+          </div>
+
           <p className={styles.founderPara}>
             The Spatial Edit was founded by Preksha Bhargav and Krishna Bhargav — partners in life, who started this studio for a very personal reason.
           </p>
 
-          <div className={styles.separator}>
+          <div className={styles.separatorLong}>
             <div className={styles.sepLine} />
             <div className={styles.sepDia}>
               <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
@@ -64,9 +72,13 @@ export default function OurStory() {
             {/* Col 1 */}
             <div className={styles.storyCol}>
               <div className={styles.iconWrap}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                  <path d="M9 22V12h6v10" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1">
+                  {/* Custom intricate house icon */}
+                  <path d="M1.5 10.5L12 2.5L22.5 10.5" strokeWidth="1.2" />
+                  <path d="M4 12V21H20V12" />
+                  <path d="M10 21V14H14V21" />
+                  <rect x="11.5" y="17" width="1" height="1" fill="var(--gold)" stroke="none" />
+                  <path d="M17 6.5V3H19V8" />
                 </svg>
               </div>
               <div className={styles.storyText}>
@@ -103,53 +115,78 @@ export default function OurStory() {
 
         {/* RIGHT COLUMN */}
         <div className={styles.rightCol}>
-          <div className={styles.imageBox}>
-            <div className={styles.imageInner}>
-              <div style={{ width: '100%', height: '100%', backgroundColor: '#dfd5c5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: 'var(--serif)', color: 'rgba(0,0,0,0.3)' }}>[Founder Image Placeholder]</span>
+          
+          {/* Unified Founder Card */}
+          <div className={styles.founderCard}>
+            <div className={styles.imageBox}>
+              <div className={styles.imageInner}>
+                <div style={{ width: '100%', height: '100%', backgroundColor: '#dfd5c5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontFamily: 'var(--serif)', color: 'rgba(0,0,0,0.3)' }}>[Founder Image Placeholder]</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.namesBox}>
+              <div className={styles.nameBlock}>
+                <div className={styles.nameTitle}>Preksha Bhargav</div>
+                <div className={styles.nameSub}>CO-FOUNDER</div>
+              </div>
+              <div className={styles.nameSeparator}>
+                <div className={styles.nameSepLine} />
+                <div className={styles.sepDia}>
+                  {/* 4-point sparkle */}
+                  <svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg>
+                </div>
+                <div className={styles.nameSepLine} />
+              </div>
+              <div className={styles.nameBlock}>
+                <div className={styles.nameTitle}>Krishna Bhargav</div>
+                <div className={styles.nameSub}>CO-FOUNDER</div>
               </div>
             </div>
           </div>
 
-          <div className={styles.namesBox}>
-            <div className={styles.nameBlock}>
-              <div className={styles.nameTitle}>Preksha Bhargav</div>
-              <div className={styles.nameSub}>CO-FOUNDER</div>
+          {/* Text and Quote Section with Vertical Line */}
+          <div className={styles.rightContentWrap}>
+            <div className={styles.rightVerticalLine}>
+              <div className={styles.vdia1}>
+                <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
+              </div>
+              <div className={styles.vdia2}>
+                <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
+              </div>
             </div>
-            <div className={styles.sepDia}>
-              <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
-            </div>
-            <div className={styles.nameBlock}>
-              <div className={styles.nameTitle}>Krishna Bhargav</div>
-              <div className={styles.nameSub}>CO-FOUNDER</div>
-            </div>
-          </div>
+            
+            <div className={styles.rightContent}>
+              <div className={styles.gapText}>
+                That gap stayed with them.<br/>
+                Two babies later and with lot of thinking, research, and groundwork behind them, they built The Spatial Edit.
+              </div>
 
-          <div className={styles.gapText}>
-            <div className={styles.gapTextLine} />
-            <div className={styles.gapTextDia} />
-            That gap stayed with them.<br/>
-            Two babies later and with lot of thinking, research, and groundwork behind them, they built The Spatial Edit.
-          </div>
+              <div className={styles.missionBox}>
+                <div className={styles.missionIcon}>
+                  {/* Classical Greek column icon */}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1">
+                    <path d="M3 21h18M4 19h16M6 17h12" />
+                    <path d="M8 17V7M12 17V7M16 17V7" />
+                    <path d="M6 7V5h12v2ZM4 5v-2h16v2Z" />
+                    <circle cx="5" cy="6" r="1" stroke="none" fill="var(--gold)" />
+                    <circle cx="19" cy="6" r="1" stroke="none" fill="var(--gold)" />
+                  </svg>
+                </div>
+                <div className={styles.missionText}>
+                  Not just another interior design studio. A studio built around the belief that your home deserves the same rigour that global companies demand from their best operations.
+                </div>
+              </div>
 
-          <div className={styles.missionBox}>
-            <div className={styles.missionIcon}>
-              {/* Classical column icon */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
-                <path d="M4 20h16M4 4h16M7 4v16M11 4v16M17 4v16" />
-              </svg>
+              <div className={styles.quoteBlock}>
+                <div className={styles.quoteMarks}>&ldquo;</div>
+                <div className={styles.quoteText}>
+                  We don&apos;t just design your space.<br/>We ensure it is executed exactly as designed.&rdquo;
+                </div>
+                <div className={styles.quoteAuthor}>The Spatial Edit</div>
+              </div>
             </div>
-            <div className={styles.missionText}>
-              Not just another interior design studio. A studio built around the belief that your home deserves the same rigour that global companies demand from their best operations.
-            </div>
-          </div>
-
-          <div className={styles.quoteBlock}>
-            <div className={styles.quoteMarks}>&ldquo;</div>
-            <div className={styles.quoteText}>
-              We don&apos;t just design your space.<br/>We ensure it is executed exactly as designed.&rdquo;
-            </div>
-            <div className={styles.quoteAuthor}>The Spatial Edit</div>
           </div>
         </div>
 

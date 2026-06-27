@@ -16,18 +16,53 @@ export default function FAQs() {
 
   return (
     <section id="faqs" className={styles.section}>
+      {/* Top Bar */}
+      <div className={styles.topBar}>
+        <div className={styles.topLeft}>
+          <div className={styles.logoTS}>
+            <div style={{ position: 'relative', width: '36px', height: '36px', fontFamily: 'var(--serif)', color: 'var(--gold)', fontSize: '28px', lineHeight: 1 }}>
+              <span style={{ position: 'absolute', left: '0px', top: '0px', zIndex: 2 }}>T</span>
+              <span style={{ position: 'absolute', left: '12px', top: '8px', zIndex: 1 }}>S</span>
+            </div>
+          </div>
+          <div className={styles.logoTextWrap}>
+            <div className={styles.logoTitle}>THE SPATIAL EDIT</div>
+            <div className={styles.logoSub}>SPATIAL DESIGN STUDIO</div>
+          </div>
+        </div>
+        <div className={styles.topRight}>
+          <div className={styles.topRightText}>QUESTIONS & ANSWERS</div>
+          <div className={styles.topRightLine} />
+          <div className={styles.topRightNum}>13</div>
+        </div>
+      </div>
+
+      {/* Left Sidebar Layout */}
       <div className={styles.vline} />
+      <div className={styles.sideNum}>13</div>
+      <div className={styles.sideText1}>SECTION</div>
+      <div className={styles.sideDia}><svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg></div>
       <div className={styles.verticalText}>QUESTIONS. ANSWERED.</div>
-      <div className={styles.cornerStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)" opacity="0.5"/></svg></div>
+      <div className={styles.cornerStar}>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 1L14 9L23 12L14 15L12 23L10 15L1 12L10 9Z" fill="none" stroke="var(--gold)" strokeWidth="1"/>
+          <path d="M12 1v22M1 12h22" stroke="var(--gold)" strokeWidth="1" />
+        </svg>
+      </div>
+
       <div className={styles.content}>
-        <div className={styles.header}>
-          <span className={styles.hlLabel}>THE SPATIAL EDIT</span>
-          <div className={styles.hlLine}/>
-          <span className={styles.hrLabel}>QUESTIONS & ANSWERS</span>
-        </div>
         <div className={styles.titleBlock}>
-          <h2 className={styles.title}>FAQ<span>s</span></h2>
+          <h2 className={styles.title}>FAQ<span style={{ fontFamily: 'var(--serif-italic)', fontWeight: '400', color: 'var(--gold)', marginLeft: '2px' }}>s</span></h2>
         </div>
+        
+        <div className={styles.separatorShort}>
+          <div className={styles.sepLine} />
+          <div className={styles.sepDia}>
+            <svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg>
+          </div>
+          <div className={styles.sepLine} />
+        </div>
+
         <p className={styles.subtitle}>CLEAR ANSWERS. COMPLETE CLARITY.</p>
         <div className={styles.faqList}>
           {faqs.map((faq, i) => (
@@ -49,8 +84,12 @@ export default function FAQs() {
         </div>
       </div>
       <div className={styles.archFooter}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="2" vectorEffect="non-scaling-stroke"/></svg>
-        <div className={styles.archDecor}><svg className={styles.archArrow} viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" stroke="rgba(180,144,79,0.6)" strokeWidth="1.5" fill="none"/></svg><div className={styles.archStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="#b4904f"/></svg></div><svg className={styles.archArrow} viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" stroke="rgba(180,144,79,0.6)" strokeWidth="1.5" fill="none"/></svg></div>
+        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none">
+          <path d="M0,100 L0,0 C250,80 750,80 1000,0 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="1.5" vectorEffect="non-scaling-stroke"/>
+        </svg>
+        <div className={styles.archDecor}>
+          <div className={styles.archStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="#b4904f"/></svg></div>
+        </div>
       </div>
     </section>
   );

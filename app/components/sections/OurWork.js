@@ -128,10 +128,12 @@ export default function OurWork() {
         </div>
       </div>
 
-      {/* Dark arch footer */}
+      {/* Elegant wavy footer separator */}
       <div className={styles.archFooter}>
-        <svg viewBox="0 0 1000 100" preserveAspectRatio="none" className={styles.archSvg}>
-          <path d="M0,100 L0,0 Q500,140 1000,0 L1000,100 Z" fill="#111" stroke="var(--gold)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+        <svg viewBox="0 0 1000 60" preserveAspectRatio="none" className={styles.archSvg}>
+          {/* Double overlapping delicate sine waves */}
+          <path d="M0,30 C250,70 750,-10 1000,30" fill="none" stroke="var(--gold)" strokeWidth="1" strokeOpacity="0.5" vectorEffect="non-scaling-stroke" />
+          <path d="M0,45 C350,0 650,60 1000,15" fill="none" stroke="var(--gold)" strokeWidth="1" strokeOpacity="0.2" vectorEffect="non-scaling-stroke" />
         </svg>
       </div>
     </section>
