@@ -1,0 +1,102 @@
+<!-- =========================================
+     SECTION 11: OUR INSIGHTS
+     ========================================= -->
+<style>
+  .s11-insights { position: relative; padding: 5vh 5vw 0vh 5vw; background: var(--cream); display: flex; flex-direction: column; overflow: hidden; min-height: 100vh; }
+  .s11-vline { position: absolute; left: 46px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, rgba(180,144,79,0.35) 0%, rgba(180,144,79,0.35) 40%, rgba(180,144,79,0.0) 47%, rgba(180,144,79,0.0) 53%, rgba(180,144,79,0.35) 60%, rgba(180,144,79,0.35) 100%); z-index: 4; pointer-events: none; }
+  .s11-vertical-text { position: absolute; left: 46px; top: 50%; transform: translateX(-50%) translateY(-50%) rotate(-90deg); transform-origin: center center; font-size: 8px; letter-spacing: 0.36em; color: var(--dark); font-weight: 200; text-transform: uppercase; white-space: nowrap; opacity: 0.55; background: var(--cream); padding: 2px 10px; z-index: 10; }
+  
+  .s11-content { position: relative; z-index: 1; width: 100%; max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; flex: 1; }
+  
+  .s11-header-block { text-align: center; margin-top: 3vh; margin-bottom: 5vh; }
+  .s11-title h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 5vw, 72px); line-height: 1.1; color: var(--dark); font-weight: 400; margin-bottom: 12px; }
+  .s11-title h2 span { color: var(--gold); }
+  .s11-subtitle { font-size: 11px; letter-spacing: 0.25em; color: var(--mid); text-transform: uppercase; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .s11-subtitle::before, .s11-subtitle::after { content: ''; width: 30px; height: 1px; background: rgba(180,144,79,0.5); }
+  
+  .s11-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; width: 100%; }
+  
+  .s11-card { background: rgba(246,240,230,0.6); border: 1px solid rgba(180,144,79,0.2); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+  .s11-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: rgba(180,144,79,0.4); }
+  .s11-img-wrap { width: 100%; height: 260px; overflow: hidden; }
+  .s11-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .s11-card:hover .s11-img-wrap img { transform: scale(1.05); }
+  
+  .s11-card-content { padding: 30px; flex: 1; display: flex; flex-direction: column; }
+  .s11-card-label { font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .s11-card-label::before { content: ''; width: 4px; height: 4px; background: var(--gold); transform: rotate(45deg); }
+  .s11-card-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; line-height: 1.15; color: var(--dark); font-weight: 500; margin-bottom: 16px; }
+  .s11-card-desc { font-size: 13px; line-height: 1.6; color: var(--mid); margin-bottom: 24px; flex: 1; }
+  .s11-card-link { font-size: 10px; letter-spacing: 0.2em; color: var(--dark); text-transform: uppercase; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s ease; margin-top: auto; }
+  .s11-card-link:hover { color: var(--gold); }
+  
+  .s11-footer-star { text-align: center; margin-top: 60px; margin-bottom: 100px; }
+  .s11-footer-star svg { width: 24px; height: 24px; fill: var(--gold); opacity: 0.5; }
+  
+  /* Shared Left side number for 11, 13, 14 */
+  .section-num-block { position: absolute; left: 16px; top: 120px; z-index: 10; text-align: center; background: var(--cream); padding: 10px 0; }
+  .section-num-block.dark-bg { background: transparent; }
+  .section-num-val { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--gold); line-height: 1; font-weight: 400; }
+  .section-num-label { font-size: 8px; letter-spacing: 0.2em; color: var(--dark); opacity: 0.6; text-transform: uppercase; margin-top: 4px; }
+  
+  @media(max-width: 900px) { .s11-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section id="section-11-insights" class="s11-insights">
+  <div class="s11-vline"></div>
+  <div class="s11-vertical-text">INSIGHTS. IDEAS. INTENTIONAL DESIGN.</div>
+  
+  <div class="section-num-block">
+    <div class="section-num-val">11</div>
+    <div class="section-num-label">SECTION</div>
+  </div>
+
+  <div class="s11-content">
+    <div class="s4-header">
+      <div class="s4-hl-top"><div class="s4-hl-label">THE SPATIAL EDIT</div><div class="s4-hl-line"></div></div>
+      <div class="s4-hr"><div class="s4-hl-label">OUR INSIGHTS</div><div class="s4-hr-number"><div class="s4-hr-line"></div>11</div></div>
+    </div>
+    
+    <div class="s11-header-block">
+      <div class="s11-title"><h2>Ideas That <span>Shape Better Spaces.</span></h2></div>
+      <div class="s11-subtitle">PERSPECTIVES ON DESIGN, PLANNING, AND SPACES THAT WORK.</div>
+    </div>
+    
+    <div class="s11-grid">
+      <!-- Card 1 -->
+      <div class="s11-card">
+        <div class="s11-img-wrap"><img src="hero_living_room.png" alt="Living Room"></div>
+        <div class="s11-card-content">
+          <div class="s11-card-label">BLOG 1</div>
+          <div class="s11-card-title">What is<br>Spatial Design?</div>
+          <div class="s11-card-desc">Understanding the thinking behind spaces that truly work.</div>
+          <a href="#" class="s11-card-link">READ MORE &rarr;</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="s11-card">
+        <div class="s11-img-wrap"><img src="kitchen_modern.png" alt="Kitchen"></div>
+        <div class="s11-card-content">
+          <div class="s11-card-label">BLOG 2</div>
+          <div class="s11-card-title">Spatial vs<br>Interior Design</div>
+          <div class="s11-card-desc">Key differences every homeowner should know before they begin.</div>
+          <a href="#" class="s11-card-link">READ MORE &rarr;</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="s11-card">
+        <div class="s11-img-wrap"><img src="blueprint_desk.png" alt="Blueprint Planning"></div>
+        <div class="s11-card-content">
+          <div class="s11-card-label">BLOG 3</div>
+          <div class="s11-card-title">Mistakes in<br>Home Planning</div>
+          <div class="s11-card-desc">Common planning mistakes that cost time, money, and comfort.</div>
+          <a href="#" class="s11-card-link">READ MORE &rarr;</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="s11-footer-star"><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z"/></svg></div>
+  </div>
+  
+  <div class="s4-bottom-arch"><svg class="s4-arch-svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg><div class="s4-arch-decor"><svg class="s4-arrow" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg><div class="s4-arch-star"><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" /></svg></div><svg class="s4-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div>
+</section>

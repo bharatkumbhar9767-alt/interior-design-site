@@ -1,0 +1,242 @@
+<style>
+  .s6-services {
+    position: relative;
+    padding: 5vh 5vw 0vh 5vw;
+    background: var(--cream);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+  .s6-bg-sketch {
+    position: absolute;
+    top: -5%; right: -5%;
+    width: 50%; height: 60%;
+    background-image: url('compass_bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .s6-vline {
+    position: absolute; left: 46px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, rgba(180,144,79,0.35) 0%, rgba(180,144,79,0.35) 40%, rgba(180,144,79,0.0) 47%, rgba(180,144,79,0.0) 53%, rgba(180,144,79,0.35) 60%, rgba(180,144,79,0.35) 100%); z-index: 4; pointer-events: none;
+  }
+
+  .s6-content { position: relative; z-index: 1; width: 100%; max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; flex: 1; }
+
+  /* Custom header for section 6 */
+  .s6-header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2vh; }
+  .s6-logo-box { display: flex; align-items: center; gap: 12px; }
+  .s6-logo-icon svg { width: 32px; height: 32px; fill: var(--gold); }
+  .s6-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--dark); font-weight: 600; line-height: 1.1; letter-spacing: 0.05em; }
+  .s6-logo-sub { font-family: 'Inter', sans-serif; font-size: 7px; letter-spacing: 0.25em; color: var(--mid); text-transform: uppercase; font-weight: 700; margin-top: 2px; }
+  .s6-header-right { display: flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: 0.2em; color: var(--dark); text-transform: uppercase; font-weight: 700; }
+  .s6-header-right::after { content: ''; width: 40px; height: 1px; background: rgba(180,144,79,0.5); }
+
+  .s6-overline { text-align: center; margin-top: 3vh; margin-bottom: 16px; }
+  .s6-overline-inner { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .s6-overline-inner::before, .s6-overline-inner::after { content: ''; width: 5px; height: 5px; background: var(--gold); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+  .s6-title { text-align: center; margin-bottom: 10px; }
+  .s6-title h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 5.5vw, 72px); line-height: 1.1; color: var(--dark); font-weight: 400; }
+  .s6-title h2 span { color: var(--gold); font-weight: 600; }
+  .s6-subtitle { text-align: center; font-size: 15px; color: var(--dark); margin-bottom: 6vh; font-weight: 500; }
+
+  .s6-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; width: 100%; padding-bottom: 80px; }
+
+  /* Redesigned Card */
+  .s6-card { background: rgba(246,240,230,0.5); border: 1px solid rgba(180,144,79,0.25); border-radius: 14px; display: flex; align-items: stretch; transition: all 0.4s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.02), inset 0 0 0 1px rgba(255,255,255,0.5); overflow: hidden; }
+  .s6-card:hover { border-color: rgba(180,144,79,0.5); box-shadow: 0 12px 30px rgba(0,0,0,0.05); transform: translateY(-3px); }
+  .s6-card-left { flex: 1; padding: 30px 20px; display: flex; align-items: center; justify-content: center; position: relative; }
+  .s6-card-left::after { content: ''; position: absolute; right: 0; top: 15%; bottom: 15%; width: 1px; background: rgba(180,144,79,0.25); }
+  .s6-card-icon { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(180,144,79,0.3); background: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(180,144,79,0.1); }
+  .s6-card-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .s6-card-right { flex: 1; padding: 24px 20px; display: flex; flex-direction: column; justify-content: center; }
+  .s6-card-num { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold); font-weight: 500; margin-bottom: 12px; }
+  .s6-card-title-wrap { display: flex; align-items: flex-start; gap: 8px; }
+  .s6-card-star { color: var(--gold); font-size: 10px; margin-top: 4px; }
+  .s6-card-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--dark); font-weight: 500; line-height: 1.25; }
+
+  /* Arch footer content */
+  .s6-arch-text { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 10; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .s6-arch-text::before, .s6-arch-text::after { content: ''; width: 4px; height: 4px; background: var(--gold); transform: rotate(45deg); }
+
+  @media(max-width: 900px) { .s6-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width: 600px) { .s6-grid { grid-template-columns: 1fr; } .s6-card { flex-direction: column; } .s6-card-left::after { width: 50%; height: 1px; right: auto; top: auto; bottom: 0; } }
+</style>
+
+<section id="section-6-services" class="s6-services">
+  <div class="s6-bg-sketch"></div>
+  <div class="s6-vline"></div>
+
+  <div class="s6-content">
+    <div class="s6-header-top">
+      <div class="s6-logo-box">
+        <div class="s6-logo-icon">
+          <svg viewBox="0 0 40 40"><path d="M20 2v36M12 10h16M14 20h12M12 30h16" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div>
+          <div class="s6-logo-text">THE SPATIAL EDIT</div>
+          <div class="s6-logo-sub">SPATIAL DESIGN STUDIO</div>
+        </div>
+      </div>
+      <div class="s6-header-right">OUR SERVICES</div>
+    </div>
+
+    <div class="s6-overline"><div class="s6-overline-inner">OUR ONLY SERVICE</div></div>
+    <div class="s6-title"><h2>One Service. <span>Total Ownership.</span></h2></div>
+    <div class="s6-subtitle">From site assessment to final handover.</div>
+
+    <div class="s6-grid">
+      <!-- Card 1 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="10" cy="13" r="3"/><line x1="12" y1="15" x2="15" y2="18"/><path d="M16 13h2"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">01</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Site<br>Assess</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">02</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Spatial<br>Planning</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 22L12 2l10 20H2z" fill="none"/><path d="M15.5 16.5L18 14l-6-6-4 4-3-3"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">03</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Design<br>Concepts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 14h4"/><path d="M6 17h2"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">04</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Civil<br>Work</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3z"/><rect x="9" y="14" width="6" height="6"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">05</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Carpentry<br>&amp; Joinery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 16s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="16"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">06</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Furniture<br>Selection</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22c-4.97 0-9-2.24-9-5v-3"/><path d="M21 14v3c0 2.76-4.03 5-9 5"/><path d="M3 9v3"/><path d="M21 9v3"/><ellipse cx="12" cy="9" rx="9" ry="5"/><path d="M7 9v3"/><path d="M17 9v3"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">07</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Decor<br>&amp; Styling</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M6 8h12l-2 8H8l-2-8z"/><path d="M10 16v4"/><path d="M14 16v4"/><path d="M8 20h8"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">08</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Installation<br>&amp; Execution</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="s6-card">
+        <div class="s6-card-left">
+          <div class="s6-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="15" cy="9" r="4"/><path d="M12.17 11.83L3 21v-4l4-4 2 2 3-3"/></svg>
+          </div>
+        </div>
+        <div class="s6-card-right">
+          <div class="s6-card-num">09</div>
+          <div class="s6-card-title-wrap">
+            <div class="s6-card-star">✦</div>
+            <div class="s6-card-title">Handover<br>&amp; Aftercare</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s4-bottom-arch" style="position: relative;">
+    <svg class="s4-arch-svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+    <div class="s6-arch-text">ONE POINT OF ACCOUNTABILITY. ONE STANDARD OF DELIVERY.</div>
+  </div>
+</section>

@@ -1,0 +1,150 @@
+<!-- =========================================
+     SECTION 14: DISCOVERY FORM
+     ========================================= -->
+<style>
+  .s14-form { position: relative; padding: 5vh 5vw 0vh 5vw; background: var(--cream); display: flex; flex-direction: column; overflow: hidden; min-height: 100vh; }
+  .s14-vline { position: absolute; left: 46px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, rgba(180,144,79,0.35) 0%, rgba(180,144,79,0.35) 40%, rgba(180,144,79,0.0) 47%, rgba(180,144,79,0.0) 53%, rgba(180,144,79,0.35) 60%, rgba(180,144,79,0.35) 100%); z-index: 4; pointer-events: none; }
+  .s14-vertical-text { position: absolute; left: 46px; top: 50%; transform: translateX(-50%) translateY(-50%) rotate(-90deg); transform-origin: center center; font-size: 8px; letter-spacing: 0.36em; color: var(--dark); font-weight: 200; text-transform: uppercase; white-space: nowrap; opacity: 0.55; background: var(--cream); padding: 2px 10px; z-index: 10; }
+  
+  .s14-center-line { position: absolute; left: 50%; top: 5vh; bottom: 100px; width: 1px; background: rgba(180,144,79,0.25); z-index: 0; }
+  .s14-center-star { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--cream); padding: 10px 0; z-index: 1; }
+  .s14-center-star svg { width: 12px; height: 12px; fill: var(--gold); }
+  
+  .s14-content { position: relative; z-index: 2; width: 100%; max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; flex: 1; }
+  
+  .s14-split { display: flex; align-items: stretch; margin-top: 5vh; flex: 1; margin-bottom: 80px; }
+  
+  .s14-left { flex: 1; padding-right: 5vw; display: flex; flex-direction: column; justify-content: center; }
+  .s14-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 6vw, 76px); line-height: 1.1; color: var(--dark); font-weight: 400; margin-bottom: 24px; }
+  .s14-title span { color: var(--gold); font-style: italic; }
+  .s14-desc { font-size: 15px; line-height: 1.6; color: var(--mid); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid rgba(180,144,79,0.3); max-width: 400px; }
+  .s14-img-wrap { width: 100%; max-width: 450px; border-radius: 12px; overflow: hidden; margin-top: auto; }
+  .s14-img-wrap img { width: 100%; display: block; object-fit: cover; }
+  
+  .s14-right { flex: 1; padding-left: 5vw; display: flex; flex-direction: column; justify-content: center; }
+  .s14-form-header { text-align: center; margin-bottom: 40px; }
+  .s14-form-title { font-size: 11px; letter-spacing: 0.25em; color: var(--dark); text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 16px; }
+  .s14-form-title::before, .s14-form-title::after { content: ''; width: 30px; height: 1px; background: rgba(180,144,79,0.5); }
+  
+  .s14-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .s14-form-group { position: relative; }
+  .s14-form-group.full { grid-column: 1 / -1; }
+  
+  .s14-input { width: 100%; background: transparent; border: 1px solid rgba(180,144,79,0.25); border-radius: 6px; padding: 18px 20px 18px 46px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--dark); transition: all 0.3s ease; box-sizing: border-box; outline: none; }
+  .s14-input:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(180,144,79,0.05); }
+  .s14-input::placeholder { color: var(--mid); opacity: 0.7; }
+  
+  textarea.s14-input { padding-top: 18px; min-height: 120px; resize: vertical; }
+  
+  .s14-icon { position: absolute; left: 18px; top: 18px; width: 16px; height: 16px; stroke: var(--mid); fill: none; stroke-width: 1.5; opacity: 0.7; pointer-events: none; transition: stroke 0.3s ease; }
+  .s14-input:focus + .s14-icon { stroke: var(--gold); opacity: 1; }
+  .s14-select-arrow { position: absolute; right: 18px; top: 18px; width: 14px; height: 14px; stroke: var(--mid); fill: none; stroke-width: 1.5; pointer-events: none; }
+  
+  select.s14-input { appearance: none; -webkit-appearance: none; cursor: pointer; }
+  
+  .s14-submit-btn { width: 100%; background: var(--gold); color: #fff; border: none; border-radius: 4px; padding: 20px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 30px; }
+  .s14-submit-btn:hover { background: #96763f; box-shadow: 0 10px 20px rgba(180,144,79,0.2); }
+  .s14-submit-btn svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 1.5; transition: transform 0.3s ease; }
+  .s14-submit-btn:hover svg { transform: translateX(5px); }
+  
+  .s14-note { text-align: center; font-size: 11px; color: var(--mid); margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .s14-note svg { width: 14px; height: 14px; stroke: var(--mid); fill: none; stroke-width: 1.5; }
+  
+  @media(max-width: 900px) { .s14-split { flex-direction: column; gap: 60px; } .s14-center-line, .s14-center-star { display: none; } .s14-left, .s14-right { padding: 0; } .s14-form-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section id="section-14-form" class="s14-form">
+  <div class="s14-vline"></div>
+  <div class="s14-vertical-text">LET'S CREATE SOMETHING EXCEPTIONAL.</div>
+  
+  <div class="section-num-block">
+    <div class="section-num-val">14</div>
+    <div class="section-num-label">SECTION</div>
+  </div>
+  
+  <div class="s14-center-line"></div>
+  <div class="s14-center-star"><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z"/></svg></div>
+
+  <div class="s14-content">
+    <div class="s14-split">
+      <div class="s14-left">
+        <h2 class="s14-title">Let's design<br>spaces that feel<br><span>effortless.</span></h2>
+        <div class="s14-desc">Every great home begins with the right conversation.</div>
+        <div class="s14-img-wrap"><img src="vase_books.png" alt="Interior Details"></div>
+      </div>
+      
+      <div class="s14-right">
+        <div class="s14-form-header">
+          <div class="s14-form-title">DISCOVERY FORM</div>
+        </div>
+        
+        <form class="s14-form-grid">
+          <div class="s14-form-group">
+            <input type="text" class="s14-input" placeholder="Full Name">
+            <svg class="s14-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="s14-form-group">
+            <input type="text" class="s14-input" placeholder="Phone Number">
+            <svg class="s14-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="s14-form-group full">
+            <input type="email" class="s14-input" placeholder="Email Address">
+            <svg class="s14-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="s14-form-group">
+            <select class="s14-input">
+              <option value="" disabled selected>Project Type</option>
+              <option value="villa">Villa / Bungalow</option>
+              <option value="apartment">Apartment</option>
+              <option value="renovation">Renovation</option>
+            </select>
+            <svg class="s14-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg class="s14-select-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="s14-form-group">
+            <select class="s14-input">
+              <option value="" disabled selected>Location</option>
+              <option value="loc1">City 1</option>
+              <option value="loc2">City 2</option>
+            </select>
+            <svg class="s14-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg class="s14-select-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="s14-form-group">
+            <select class="s14-input">
+              <option value="" disabled selected>Budget Range</option>
+              <option value="b1">Below 50L</option>
+              <option value="b2">50L - 1Cr</option>
+              <option value="b3">1Cr+</option>
+            </select>
+            <svg class="s14-icon" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <svg class="s14-select-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="s14-form-group">
+            <select class="s14-input">
+              <option value="" disabled selected>Timeline</option>
+              <option value="t1">Immediate</option>
+              <option value="t2">Within 3 Months</option>
+              <option value="t3">Within 6 Months</option>
+            </select>
+            <svg class="s14-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg class="s14-select-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="s14-form-group full">
+            <textarea class="s14-input" placeholder="Tell us about your project"></textarea>
+            <svg class="s14-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="s14-form-group full">
+            <button type="submit" class="s14-submit-btn">
+              BOOK DISCOVERY CALL
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <div class="s14-note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> We'll respond within 24 hours</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="s4-bottom-arch"><svg class="s4-arch-svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg><div class="s4-arch-decor"><svg class="s4-arrow" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg><div class="s4-arch-star"><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" /></svg></div><svg class="s4-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div>
+</section>
