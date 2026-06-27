@@ -1,0 +1,89 @@
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+import styles from './ContactForm.module.css';
+
+export default function ContactForm() {
+  const [form, setForm] = useState({ name:'', phone:'', email:'', project:'', location:'', budget:'', timeline:'', message:'' });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
+
+  return (
+    <section id="contact" className={styles.section}>
+      <div className={styles.vline} />
+      <div className={styles.verticalText}>LET'S CREATE SOMETHING EXCEPTIONAL.</div>
+      <div className={styles.centerLine} />
+      <div className={styles.centerStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg></div>
+      <div className={styles.content}>
+        <div className={styles.split}>
+          <div className={styles.leftCol}>
+            <h2 className={styles.title}>Let's design<br/>spaces that feel<br/><span>effortless.</span></h2>
+            <div className={styles.desc}>Every great home begins with the right conversation.</div>
+            <div className={styles.imgWrap}>
+              <Image src="/images/vase_books.png" alt="Interior Details" fill style={{objectFit:'cover'}} />
+            </div>
+          </div>
+          <div className={styles.rightCol}>
+            <div className={styles.formHeader}><div className={styles.formTitle}>DISCOVERY FORM</div></div>
+            {submitted ? (
+              <div className={styles.thankYou}>
+                <svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" strokeWidth="1.5" strokeLinecap="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="9 12 12 15 15 9"/>
+                </svg>
+                <h3>Thank you!</h3>
+                <p>We'll be in touch within 24 hours.</p>
+              </div>
+            ) : (
+              <form className={styles.formGrid} onSubmit={handleSubmit}>
+                {[
+                  { name:'name', placeholder:'Full Name', type:'text', icon:<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
+                  { name:'phone', placeholder:'Phone Number', type:'tel', icon:<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> },
+                ].map((f) => (
+                  <div className={styles.formGroup} key={f.name}>
+                    <input type={f.type} name={f.name} className={styles.input} placeholder={f.placeholder} value={form[f.name]} onChange={handleChange} required />
+                    <div className={styles.icon}>{f.icon}</div>
+                  </div>
+                ))}
+                <div className={`${styles.formGroup} ${styles.full}`}>
+                  <input type="email" name="email" className={styles.input} placeholder="Email Address" value={form.email} onChange={handleChange} required />
+                  <div className={styles.icon}><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                </div>
+                {[
+                  { name:'project', label:'Project Type', options:[{v:'villa',l:'Villa / Bungalow'},{v:'apartment',l:'Apartment'},{v:'renovation',l:'Renovation'},{v:'commercial',l:'Commercial'}] },
+                  { name:'location', label:'Location', options:[{v:'jh',l:'Jubilee Hills'},{v:'bh',l:'Banjara Hills'},{v:'gc',l:'Gachibowli'},{v:'hc',l:'Hitec City'},{v:'other',l:'Other'}] },
+                  { name:'budget', label:'Budget Range', options:[{v:'50l',l:'Below 50 Lakhs'},{v:'1cr',l:'50L – 1 Crore'},{v:'1cr+',l:'1 Crore+'}] },
+                  { name:'timeline', label:'Timeline', options:[{v:'now',l:'Immediate'},{v:'3m',l:'Within 3 Months'},{v:'6m',l:'Within 6 Months'}] },
+                ].map((s) => (
+                  <div className={styles.formGroup} key={s.name}>
+                    <select name={s.name} className={styles.input} value={form[s.name]} onChange={handleChange} required>
+                      <option value="" disabled>{s.label}</option>
+                      {s.options.map((o) => <option key={o.v} value={o.v}>{o.l}</option>)}
+                    </select>
+                    <svg className={styles.selectArrow} viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </div>
+                ))}
+                <div className={`${styles.formGroup} ${styles.full}`}>
+                  <textarea name="message" className={styles.input} placeholder="Tell us about your project" value={form.message} onChange={handleChange} />
+                  <div className={styles.icon}><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                </div>
+                <div className={`${styles.formGroup} ${styles.full}`}>
+                  <button type="submit" className={styles.submitBtn}>
+                    BOOK DISCOVERY CALL
+                    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <div className={styles.note}><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> We'll respond within 24 hours</div>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className={styles.archFooter}>
+        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="2" vectorEffect="non-scaling-stroke"/></svg>
+        <div className={styles.archDecor}><svg className={styles.archArrow} viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" stroke="rgba(180,144,79,0.6)" strokeWidth="1.5" fill="none"/></svg><div className={styles.archStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="#b4904f"/></svg></div><svg className={styles.archArrow} viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" stroke="rgba(180,144,79,0.6)" strokeWidth="1.5" fill="none"/></svg></div>
+      </div>
+    </section>
+  );
+}
