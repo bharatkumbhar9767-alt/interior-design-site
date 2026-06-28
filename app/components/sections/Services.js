@@ -191,21 +191,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Dark arch */}
-      <div className={styles.archFooter} style={{position:'relative', marginTop:'20px'}}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-        </svg>
-        <div className={styles.archInner}>
-          <svg viewBox="0 0 24 24" style={{width:'10px',height:'10px',fill:'var(--gold)',margin:'0 8px'}}>
-            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z"/>
-          </svg>
-          ONE POINT OF ACCOUNTABILITY. ONE STANDARD OF DELIVERY.
-          <svg viewBox="0 0 24 24" style={{width:'10px',height:'10px',fill:'var(--gold)',margin:'0 8px'}}>
-            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z"/>
-          </svg>
-        </div>
-      </div>
+      {/* footer divider removed per request */}
     </section>
   );
 }

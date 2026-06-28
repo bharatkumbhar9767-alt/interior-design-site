@@ -1,4 +1,4 @@
-.section{position:relative;padding:5vh 5vw 0;background:#111;display:flex;flex-direction:column;overflow:hidden;min-height:100vh;color:var(--cream);}
+.section{position:relative;padding:5vh 5vw 0;background:#111 url('/images/bg-sec-3.png') center bottom/cover no-repeat;display:flex;flex-direction:column;overflow:hidden;min-height:auto;color:var(--cream);}
 .sidebarLeft{position:absolute;left:16px;top:0;bottom:0;width:60px;display:flex;flex-direction:column;align-items:center;z-index:10;padding:5vh 0;}
 .sidebarNum{display:flex;flex-direction:column;align-items:center;margin-bottom:20px;}
 .num{font-family:var(--serif);font-size:24px;color:var(--gold);line-height:1;}

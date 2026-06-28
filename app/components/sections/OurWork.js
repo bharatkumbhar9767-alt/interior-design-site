@@ -99,43 +99,9 @@ export default function OurWork() {
             </div>
           ))}
         </div>
-
-        {/* Bottom Text */}
-        <div className={styles.bottomSection}>
-          <div className={styles.bottomStar}>
-             <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.2">
-               {/* Star shape */}
-               <path d="M12 1L14 9L23 12L14 15L12 23L10 15L1 12L10 9Z" />
-               {/* The cross lines through the star */}
-               <path d="M12 1v22M1 12h22" strokeWidth="1.2" />
-               <circle cx="12" cy="12" r="2" fill="var(--gold)"/>
-             </svg>
-          </div>
-          
-          <div className={styles.bottomText} style={{ marginBottom: '24px' }}>
-            DESIGNED WITH INTENTION. DELIVERED WITH PRECISION.
-          </div>
-
-          <div className={styles.separator} style={{ width: '100%', maxWidth: '400px', margin: '0 auto 0' }}>
-            <div className={styles.sepLine} />
-            <div className={styles.sepDia} style={{ margin: '0 20px' }}>
-              <svg viewBox="0 0 24 24">
-                <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/>
-              </svg>
-            </div>
-            <div className={styles.sepLine} />
-          </div>
-        </div>
       </div>
 
-      {/* Elegant wavy footer separator */}
-      <div className={styles.archFooter}>
-        <svg viewBox="0 0 1000 60" preserveAspectRatio="none" className={styles.archSvg}>
-          {/* Double overlapping delicate sine waves */}
-          <path d="M0,30 C250,70 750,-10 1000,30" fill="none" stroke="var(--gold)" strokeWidth="1" strokeOpacity="0.5" vectorEffect="non-scaling-stroke" />
-          <path d="M0,45 C350,0 650,60 1000,15" fill="none" stroke="var(--gold)" strokeWidth="1" strokeOpacity="0.2" vectorEffect="non-scaling-stroke" />
-        </svg>
-      </div>
+      {/* footer divider removed per request */}
     </section>
   );
 }

@@ -34,7 +34,7 @@ export default function HeroSection() {
           alt="Luxury living room - The Spatial Edit"
           fill
           priority
-          style={{ objectFit: 'cover', objectPosition: '40% center' }}
+          style={{ objectFit: 'cover', objectPosition: '40% top' }}
         />
         <div className={styles.heroPhotoFade} />
       </div>

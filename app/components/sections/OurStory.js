@@ -163,21 +163,6 @@ export default function OurStory() {
                 Two babies later and with lot of thinking, research, and groundwork behind them, they built The Spatial Edit.
               </div>
 
-              <div className={styles.missionBox}>
-                <div className={styles.missionIcon}>
-                  {/* Classical Greek column icon */}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1">
-                    <path d="M3 21h18M4 19h16M6 17h12" />
-                    <path d="M8 17V7M12 17V7M16 17V7" />
-                    <path d="M6 7V5h12v2ZM4 5v-2h16v2Z" />
-                    <circle cx="5" cy="6" r="1" stroke="none" fill="var(--gold)" />
-                    <circle cx="19" cy="6" r="1" stroke="none" fill="var(--gold)" />
-                  </svg>
-                </div>
-                <div className={styles.missionText}>
-                  Not just another interior design studio. A studio built around the belief that your home deserves the same rigour that global companies demand from their best operations.
-                </div>
-              </div>
 
               <div className={styles.quoteBlock}>
                 <div className={styles.quoteMarks}>&ldquo;</div>
@@ -192,21 +177,7 @@ export default function OurStory() {
 
       </div>
 
-      {/* Bottom Arch (Mountain Curve) */}
-      <div className={styles.archFooter}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M0,100 L0,10 C125,10 125,70 250,70 C375,70 375,10 500,10 C625,10 625,70 750,70 C875,70 875,10 1000,10 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="2" vectorEffect="non-scaling-stroke"/>
-        </svg>
-        <div className={styles.archContent}>
-          <div className={styles.archStar}>
-            <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
-          </div>
-          <div className={styles.archText}>
-            THOUGHTFUL SPACES. FLAWLESS EXECUTION.<br/>
-            <span>DESIGNED TO WORK. FINISHED TO LAST.</span>
-          </div>
-        </div>
-      </div>
+      {/* footer divider removed per request */}
     </section>
   );
 }
