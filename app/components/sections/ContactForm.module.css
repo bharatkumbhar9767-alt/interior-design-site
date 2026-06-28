@@ -1,4 +1,4 @@
-.section{position:relative;padding:5vh 5vw 0;background:var(--cream) url('/images/bg-sec-con.png') center bottom/cover no-repeat;display:flex;flex-direction:column;overflow:hidden;min-height:auto;}
+.section{position:relative;padding:5vh 5vw 60px;background:var(--cream) url('/images/bg-sec-con.png') center bottom/cover no-repeat;display:flex;flex-direction:column;overflow:hidden;min-height:auto;}
 .topBar {display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-bottom: 40px; padding: 0 5vw;}
 .topLeft { display: flex; align-items: flex-start; gap: 12px; }
 .logoTS { margin-right: 8px; }
@@ -38,6 +38,13 @@
 .title span{color:var(--gold);font-style:italic;}
 .desc{font-size:15px;line-height:1.6;color:var(--mid);margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(180,144,79,0.3);max-width:400px;}
 .imgWrap{width:100%;max-width:450px;border-radius:12px;overflow:hidden;margin-top:auto;height:280px;position:relative;}
+
+/* thin decorative line above vase to help composition */
+.vaseLine{width:60%;height:1px;background:rgba(180,144,79,0.35);margin:18px 0;border-radius:2px;}
+
+/* Reserve space near title so background has breathing room and title stays on one line */
+.leftCol { padding-top: 28px; min-height: 220px; }
+.title { white-space: nowrap; }
 .rightCol{flex:1;padding-left:5vw;display:flex;flex-direction:column;justify-content:center;}
 .formHeader{text-align:center;margin-bottom:0;}
 .formTitle{font-family:var(--serif);font-size:16px;letter-spacing:0.2em;color:#9b8054;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:16px;}

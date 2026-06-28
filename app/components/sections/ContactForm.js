@@ -12,57 +12,19 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className={styles.section}>
-      {/* Top Bar */}
-      <div className={styles.topBar}>
-        <div className={styles.topLeft}>
-          <div className={styles.logoTS}>
-            <div style={{ position: 'relative', width: '36px', height: '36px', fontFamily: 'var(--serif)', color: 'var(--gold)', fontSize: '28px', lineHeight: 1 }}>
-              <span style={{ position: 'absolute', left: '0px', top: '0px', zIndex: 2 }}>T</span>
-              <span style={{ position: 'absolute', left: '12px', top: '8px', zIndex: 1 }}>S</span>
-            </div>
-          </div>
-          <div className={styles.logoTextWrap}>
-            <div className={styles.logoTitle}>THE SPATIAL EDIT</div>
-            <div className={styles.logoSub}>SPATIAL DESIGN STUDIO</div>
-          </div>
-        </div>
-        <div className={styles.topRight}>
-          <div className={styles.topRightText}>DISCOVERY FORM</div>
-          <div className={styles.topRightLine} />
-          <div className={styles.topRightNum}>14</div>
-        </div>
-      </div>
-
-      {/* Left Sidebar Layout */}
-      <div className={styles.vline} />
-      <div className={styles.sideNum}>14</div>
-      <div className={styles.sideText1}>SECTION</div>
-      <div className={styles.sideDia}><svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg></div>
-      <div className={styles.verticalText}>LET'S CREATE SOMETHING EXCEPTIONAL.</div>
-      <div className={styles.cornerStar}>
-        <svg viewBox="0 0 24 24">
-          <path d="M12 1L14 9L23 12L14 15L12 23L10 15L1 12L10 9Z" fill="none" stroke="var(--gold)" strokeWidth="1"/>
-          <path d="M12 1v22M1 12h22" stroke="var(--gold)" strokeWidth="1" />
-        </svg>
-      </div>
+      {/* Top Bar and sidebar removed per design request */}
       <div className={styles.content}>
         <div className={styles.split}>
           <div className={styles.leftCol}>
-            <h2 className={styles.title}>Let's design<br/>spaces that feel<br/><span style={{ fontFamily: 'var(--serif-italic)', fontWeight: '400', color: 'var(--gold)' }}>effortless.</span></h2>
-            
-            <div className={styles.separatorShort}>
-              <div className={styles.sepLine} />
-              <div className={styles.sepDia}>
-                <svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg>
-              </div>
-              <div className={styles.sepLine} />
+            {/* title/heading removed per request to keep left image visible */}
+            <div className={styles.vaseLine} aria-hidden="true" />
+            <div className={styles.imgWrap}>
+              <Image src="/images/vase_books.png" alt="vase and books" fill style={{ objectFit: 'cover', objectPosition: 'center bottom' }} />
             </div>
-
-            <div className={styles.desc}>Every great home begins with the right conversation.</div>
           </div>
           <div className={styles.rightCol}>
             <div className={styles.formHeader}>
-              <div className={styles.formTitle}>DISCOVERY FORM</div>
+              {/* form title removed per request */}
               <div className={styles.separatorCenter} style={{ marginTop: '16px', marginBottom: '32px' }}>
                 <div className={styles.sepLine} />
                 <div className={styles.sepDia}>

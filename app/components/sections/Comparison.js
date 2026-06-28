@@ -68,8 +68,7 @@ const withItems = [
 export default function Comparison() {
   return (
     <section id="comparison" className={styles.section}>
-      {/* Vertical Line Decoration */}
-      <div className={styles.vline} />
+      {/* Vertical decoration removed per request */}
 
       {/* Blueprint bg */}
       <div className={styles.blueprintBg} />
@@ -78,17 +77,11 @@ export default function Comparison() {
       <div className={styles.content}>
         {/* Header */}
         <div className={styles.header}>
-          <div className={styles.headerLeft}>
-            <div className={styles.headerLabel}>
-              <span>The Spatial Edit</span>
-              <div className={styles.labelLine} />
-            </div>
-            <h2 className={styles.title}>
-              Why It Comes<br />
-              <span>Before Aesthetics.</span>
-            </h2>
-          </div>
-          <div className={styles.headerNum}>04</div>
+          {/* header label/number removed per request */}
+          <h2 className={styles.title}>
+            Why It Comes<br />
+            <span>Before Aesthetics.</span>
+          </h2>
         </div>
 
         {/* Cards — symmetrical, pushed lower */}

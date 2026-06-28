@@ -23,43 +23,7 @@ const works = [
 export default function OurWork() {
   return (
     <section id="work" className={styles.section}>
-      {/* Left Full-Height Sidebar */}
-      <div className={styles.sidebarLeft}>
-        <div className={styles.sidebarLine} style={{ flex: '0 0 8vh' }} />
-        <div className={styles.sidebarDia}>
-           <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
-        </div>
-        <div className={styles.sidebarLine} style={{ flex: '0 0 4vh' }} />
-        <div className={styles.sidebarNum}>10</div>
-        <div className={styles.sidebarText1}>SECTION</div>
-        <div className={styles.sidebarLine} style={{ flex: '0 0 6vh' }} />
-        <div className={styles.sidebarDia}>
-           <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
-        </div>
-        <div className={styles.sidebarLine} style={{ flex: '0 0 4vh' }} />
-        <div className={styles.sidebarText2}>REAL SPACES. THOUGHTFUL DESIGN.</div>
-        <div className={styles.sidebarLine} style={{ flex: '1' }} />
-      </div>
-
-      {/* Top Bar */}
-      <div className={styles.topBar}>
-        <div className={styles.topLeft}>
-          <div className={styles.logoTS}>
-            <svg viewBox="0 0 24 24" width="28" height="28" stroke="var(--gold)" strokeWidth="1.5" fill="none">
-              <path d="M4 7V4h16v3M12 4v16M8 20h8" />
-            </svg>
-          </div>
-          <div className={styles.logoTextWrap}>
-            <div className={styles.logoTitle}>THE SPATIAL EDIT</div>
-            <div className={styles.logoSub}>SPATIAL DESIGN STUDIO</div>
-          </div>
-        </div>
-        <div className={styles.topRight}>
-          <div className={styles.topRightText}>OUR WORK</div>
-          <div className={styles.topRightLine} />
-          <div className={styles.topRightNum}>10</div>
-        </div>
-      </div>
+      {/* Top bar and left sidebar removed per request */}
 
       {/* Main Content */}
       <div className={styles.mainContent}>

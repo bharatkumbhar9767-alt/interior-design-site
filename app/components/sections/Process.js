@@ -90,18 +90,11 @@ export default function Process() {
 
   return (
     <section id="process" className={styles.section}>
-      <div className={styles.vline} />
-      <div className={styles.headerRight}>
-        <div className={styles.hrTop}>
-          <div className={styles.hrLabel}>OUR PROCESS</div>
-          <div className={styles.hrNum}>09</div>
-        </div>
-      </div>
+      {/* Side visuals and number removed per request */}
 
       <div className={styles.content}>
         <div className={styles.sectionHeader}>
-          <span className={styles.headerLabel}>THE SPATIAL EDIT</span>
-          <div className={styles.headerLine} />
+          {/* header label removed per request */}
         </div>
         <div className={styles.titleWrap}>
           <h2 className={styles.title}>Our <span>Process.</span></h2>

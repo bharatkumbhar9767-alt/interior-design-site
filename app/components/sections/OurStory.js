@@ -4,41 +4,7 @@ import styles from './OurStory.module.css';
 export default function OurStory() {
   return (
     <section id="story" className={styles.section}>
-      {/* Top Bar */}
-      <div className={styles.topBar}>
-        <div className={styles.topLeft}>
-          <div className={styles.logoTS}>
-            <svg width="24" height="32" viewBox="0 0 24 32">
-              <path d="M12 0L12 32M0 12L24 12" stroke="var(--gold)" strokeWidth="1.5" />
-              <text x="12" y="22" fontFamily="var(--serif)" fontSize="18" fill="var(--dark)" textAnchor="middle">TS</text>
-            </svg>
-          </div>
-          <div className={styles.logoTextWrap}>
-            <div className={styles.logoTitle}>THE SPATIAL EDIT</div>
-            <div className={styles.logoSub}>SPATIAL DESIGN STUDIO</div>
-          </div>
-        </div>
-        <div className={styles.topRight}>
-          <div className={styles.topRightText}>OUR STORY</div>
-          <div className={styles.topRightLine} />
-          <div className={styles.topRightNum}>07</div>
-        </div>
-      </div>
-
-      {/* Left Sidebar */}
-      <div className={styles.sidebarLeft}>
-        <div className={styles.sidebarNum}>07</div>
-        <div className={styles.sidebarText1}>SECTION</div>
-        <div className={styles.sidebarLine} style={{ flex: '1', minHeight: '60px' }} />
-        <div className={styles.sidebarText2}>BUILT FROM EXPERIENCE. DRIVEN BY BELIEF.</div>
-        <div className={styles.sidebarLine} style={{ flex: '1', minHeight: '60px' }} />
-        <div className={styles.sidebarStar}>
-          <svg viewBox="0 0 24 24">
-            <path d="M12 1L14 9L23 12L14 15L12 23L10 15L1 12L10 9Z" fill="none" stroke="var(--gold)" strokeWidth="1"/>
-            <path d="M12 1v22M1 12h22" stroke="var(--gold)" strokeWidth="1" />
-          </svg>
-        </div>
-      </div>
+      {/* Top bar and left sidebar removed per request */}
 
       {/* Main Content Grid */}
       <div className={styles.mainContent}>
@@ -46,7 +12,7 @@ export default function OurStory() {
         {/* LEFT COLUMN */}
         <div className={styles.leftCol}>
           <h2 className={styles.title}>Our Story.</h2>
-          <h3 className={styles.subtitle}>Built from experience.<br/>Driven by belief.</h3>
+          {/* subtitle removed per request */}
           
           <div className={styles.separatorShort}>
             <div className={styles.sepLine} />
@@ -169,7 +135,7 @@ export default function OurStory() {
                 <div className={styles.quoteText}>
                   We don&apos;t just design your space.<br/>We ensure it is executed exactly as designed.&rdquo;
                 </div>
-                <div className={styles.quoteAuthor}>The Spatial Edit</div>
+                {/* quote author removed per request */}
               </div>
             </div>
           </div>

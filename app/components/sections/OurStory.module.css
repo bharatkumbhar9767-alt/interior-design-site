@@ -1,7 +1,7 @@
 .section {
   position: relative;
   background: var(--cream) url('/images/bg-sec-4.png') center bottom/cover no-repeat;
-  padding: 6vh 5vw 0;
+  padding: 6vh 5vw 60px;
   display: flex;
   flex-direction: column;
   overflow: hidden;

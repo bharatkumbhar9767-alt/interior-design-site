@@ -5,7 +5,8 @@
 
 .section {
   position: relative;
-  padding: 5vh 5vw 0;
+  /* add bottom spacing so next section has breathing room */
+  padding: 5vh 5vw 60px;
   background: var(--cream) url('/images/bg-sec-6.png') center bottom/cover no-repeat;
   display: flex; flex-direction: column;
   overflow: hidden; min-height: 100vh;
@@ -98,11 +99,11 @@
 }
 .card:hover,
 .cardExpanded {
-  transform: translateY(-4px) scale(1.01);
+  /* keep card subtle on hover; show preview box instead of expanding from below */
+  transform: translateY(-2px);
   box-shadow:
     -8px -8px 24px rgba(255,255,255,0.75),
-    8px 8px 28px rgba(0,0,0,0.07),
-    0 0 0 1.5px rgba(180,144,79,0.55);
+    8px 8px 28px rgba(0,0,0,0.07);
 }
 
 /* Left: icon area */
@@ -160,19 +161,33 @@
 .cardDesc {
   font-size: 11.5px; line-height: 1.65;
   color: var(--mid); font-weight: 400;
-  margin-top: 0;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition:
-    max-height 0.45s cubic-bezier(0.22,1,0.36,1),
-    opacity 0.35s ease,
-    margin-top 0.35s ease;
-}
-.descVisible {
-  max-height: 120px;
-  opacity: 1;
   margin-top: 10px;
+  opacity: 1;
+  max-height: none;
+}
+
+/* Hover preview box (appears instead of expanding the card) */
+.previewBox {
+  position: absolute;
+  right: calc(100% + 18px);
+  top: 8px;
+  width: 320px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  border: 1px solid rgba(180,144,79,0.28);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  transform: translateY(0) scale(0.98);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  z-index: 30;
+  overflow: hidden;
+}
+.card:hover .previewBox { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+@media (max-width: 900px) {
+  .previewBox { display: none; }
 }
 
 /* Arch */

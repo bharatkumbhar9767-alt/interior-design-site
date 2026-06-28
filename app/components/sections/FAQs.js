@@ -16,39 +16,7 @@ export default function FAQs() {
 
   return (
     <section id="faqs" className={styles.section}>
-      {/* Top Bar */}
-      <div className={styles.topBar}>
-        <div className={styles.topLeft}>
-          <div className={styles.logoTS}>
-            <div style={{ position: 'relative', width: '36px', height: '36px', fontFamily: 'var(--serif)', color: 'var(--gold)', fontSize: '28px', lineHeight: 1 }}>
-              <span style={{ position: 'absolute', left: '0px', top: '0px', zIndex: 2 }}>T</span>
-              <span style={{ position: 'absolute', left: '12px', top: '8px', zIndex: 1 }}>S</span>
-            </div>
-          </div>
-          <div className={styles.logoTextWrap}>
-            <div className={styles.logoTitle}>THE SPATIAL EDIT</div>
-            <div className={styles.logoSub}>SPATIAL DESIGN STUDIO</div>
-          </div>
-        </div>
-        <div className={styles.topRight}>
-          <div className={styles.topRightText}>QUESTIONS & ANSWERS</div>
-          <div className={styles.topRightLine} />
-          <div className={styles.topRightNum}>13</div>
-        </div>
-      </div>
-
-      {/* Left Sidebar Layout */}
-      <div className={styles.vline} />
-      <div className={styles.sideNum}>13</div>
-      <div className={styles.sideText1}>SECTION</div>
-      <div className={styles.sideDia}><svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg></div>
-      <div className={styles.verticalText}>QUESTIONS. ANSWERED.</div>
-      <div className={styles.cornerStar}>
-        <svg viewBox="0 0 24 24">
-          <path d="M12 1L14 9L23 12L14 15L12 23L10 15L1 12L10 9Z" fill="none" stroke="var(--gold)" strokeWidth="1"/>
-          <path d="M12 1v22M1 12h22" stroke="var(--gold)" strokeWidth="1" />
-        </svg>
-      </div>
+      {/* Top Bar and sidebar removed per design request */}
 
       <div className={styles.content}>
         <div className={styles.titleBlock}>

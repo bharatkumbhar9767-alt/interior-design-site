@@ -23,19 +23,11 @@ export default function AestheticDirection() {
 
   return (
     <section id="aesthetics" className={styles.section}>
-      <div className={styles.vline} />
-      <div className={styles.verticalText}>DESIGNED TO WORK. — FINISHED TO LAST.</div>
+      {/* side visuals removed per request */}
 
       <div className={styles.content}>
         <div className={styles.header}>
-          <div className={styles.headerTop}>
-            <span className={styles.headerLabel}>THE SPATIAL EDIT</span>
-            <div className={styles.headerLine} />
-          </div>
-          <div className={styles.headerRight}>
-            <span className={styles.headerLabel}>SPATIAL DESIGN STUDIO</span>
-            <span className={styles.headerNum}>05</span>
-          </div>
+          {/* header labels removed per request */}
         </div>
 
         <div className={styles.titleBlock}>

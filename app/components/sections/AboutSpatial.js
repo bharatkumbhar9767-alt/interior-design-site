@@ -4,8 +4,7 @@ import styles from './AboutSpatial.module.css';
 export default function AboutSpatial() {
   return (
     <section id="about" className={styles.section}>
-      <div className={styles.vline} />
-      <div className={styles.sideLabel}>The Thinking Before The Design</div>
+      {/* Side label removed per request */}
 
       <div className={styles.inner}>
         <div className={styles.left}>
