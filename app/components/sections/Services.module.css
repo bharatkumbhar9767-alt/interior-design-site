@@ -91,7 +91,7 @@
   align-items: flex-start;
   border: 1px solid rgba(180,144,79,0.35);
   padding: 5px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: -5px -5px 16px rgba(255,255,255,0.6), 5px 5px 18px rgba(0,0,0,0.04);
   /* Transition for expand */
   transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
@@ -169,25 +169,26 @@
 /* Hover preview box (appears instead of expanding the card) */
 .previewBox {
   position: absolute;
-  right: calc(100% + 18px);
-  top: 8px;
+  left: 50%;
+  top: 100%;
   width: 320px;
   height: 200px;
   background-size: cover;
   background-position: center;
   border-radius: 12px;
   border: 1px solid rgba(180,144,79,0.28);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-  transform: translateY(0) scale(0.98);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.18);
+  transform: translate(12px,12px) rotate(-4deg) scale(0.98);
   opacity: 0; pointer-events: none;
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22,1,0.36,1);
   z-index: 30;
   overflow: hidden;
 }
-.card:hover .previewBox { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.card:hover .previewBox { opacity: 1; transform: translate(36px,36px) rotate(-4deg) scale(1); pointer-events: auto; }
 
 @media (max-width: 900px) {
   .previewBox { display: none; }
+  .grid { grid-template-columns: repeat(2,1fr); }
 }
 
 /* Arch */

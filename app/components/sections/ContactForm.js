@@ -12,11 +12,12 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className={styles.section}>
+      <div className={styles.contactLabel}>Contact Us</div>
       {/* Top Bar and sidebar removed per design request */}
       <div className={styles.content}>
         <div className={styles.split}>
           <div className={styles.leftCol}>
-            {/* title/heading removed per request to keep left image visible */}
+            {/* Decorative image — hidden on desktop per request */}
             <div className={styles.vaseLine} aria-hidden="true" />
             <div className={styles.imgWrap}>
               <Image src="/images/vase_books.png" alt="vase and books" fill style={{ objectFit: 'cover', objectPosition: 'center bottom' }} />
