@@ -39,19 +39,11 @@ export default function HeroSection() {
         <div className={styles.heroPhotoFade} />
       </div>
 
-      {/* Vertical line decorations */}
-      <div className={styles.heroVline} />
-      <div className={`${styles.heroDia} ${styles.heroDiaTop}`} />
-      <div className={`${styles.heroDia} ${styles.heroDiaBot}`} />
-      <div className={styles.heroScroll}>Scroll to Explore</div>
+      {/* side decorations and eyebrow removed per request */}
 
       {/* Hero content */}
       <div className={styles.heroContent}>
-        <p className={`${styles.hEyebrow} ${styles.anim}`} data-anim>
-          Spatial Design Studio <span className={styles.dot}>·</span>
-          Hyderabad <span className={styles.dot}>·</span>
-          Est. 2026
-        </p>
+        {/* eyebrow removed per request */}
 
         <h1 className={`${styles.hHeadline} ${styles.anim}`} data-anim>
           Spaces designed<br />to work.

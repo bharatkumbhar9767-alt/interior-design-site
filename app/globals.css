@@ -157,3 +157,28 @@ button { cursor: pointer; border: none; background: none; }
   width: 28px; height: 28px;
   fill: var(--gold);
 }
+
+/* Desktop: hide left side strips / section numbers globally */
+@media (min-width: 1025px) {
+  .vline,
+  .sideLabel,
+  .sideNum,
+  .sideText1,
+  .sideText2,
+  .verticalText,
+  .sideDia,
+  .sidebarLeft {
+    display: none !important;
+  }
+  /* remove extra left padding content may have reserved for side strip */
+  .content { padding-left: 0 !important; }
+}
+
+/* Mobile: ensure section backgrounds keep bottom visible and avoid over-zoom */
+@media (max-width: 768px) {
+  .section {
+    background-position: center bottom !important;
+    background-size: 100% auto !important;
+    background-repeat: no-repeat !important;
+  }
+}

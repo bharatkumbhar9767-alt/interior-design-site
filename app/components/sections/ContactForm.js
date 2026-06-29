@@ -60,7 +60,7 @@ export default function ContactForm() {
           </div>
           <div className={styles.rightCol}>
             <div className={styles.formHeader}>
-              <div className={styles.formTitle}>DISCOVERY FORM</div>
+              {/* form title removed per request */}
               <div className={styles.separatorCenter} style={{ marginTop: '16px', marginBottom: '32px' }}>
                 <div className={styles.sepLine} />
                 <div className={styles.sepDia}>

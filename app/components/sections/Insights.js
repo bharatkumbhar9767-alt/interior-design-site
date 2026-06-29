@@ -10,13 +10,9 @@ const posts = [
 export default function Insights() {
   return (
     <section id="insights" className={styles.section}>
-      <div className={styles.vline} />
-      <div className={styles.verticalText}>INSIGHTS. IDEAS. INTENTIONAL DESIGN.</div>
+      {/* side visuals removed per request */}
       <div className={styles.content}>
-        <div className={styles.header}>
-          <span className={styles.hlLabel}>THE SPATIAL EDIT</span>
-          <span className={styles.hrLabel}>OUR INSIGHTS</span>
-        </div>
+        {/* header labels removed per request */}
         <div className={styles.titleBlock}>
           <h2 className={styles.title}>Ideas That <span>Shape Better Spaces.</span></h2>
         </div>

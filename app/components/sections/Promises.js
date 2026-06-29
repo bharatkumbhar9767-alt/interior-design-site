@@ -26,12 +26,7 @@ const promises = [
 export default function Promises() {
   return (
     <section id="promises" className={styles.section}>
-      <div className={styles.sidebarLeft}>
-        <div className={styles.sidebarNum}><div className={styles.num}>08</div><div className={styles.text}>SECTION</div></div>
-        <div className={styles.sidebarLineTop} />
-        <div className={styles.sidebarText}>PROMISES WE STAND BY.</div>
-        <div className={styles.sidebarLineBottom} />
-      </div>
+      {/* sidebar removed per request */}
       <div className={styles.headerRight}>
         <div className={styles.hrTop}>
           <div className={styles.hrLabel}>OUR PROMISES</div>

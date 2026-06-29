@@ -44,7 +44,7 @@ export default function OurStory() {
         {/* LEFT COLUMN */}
         <div className={styles.leftCol}>
           <h2 className={styles.title}>Our Story.</h2>
-          <h3 className={styles.subtitle}>Built from experience.<br/>Driven by belief.</h3>
+          {/* subtitle removed per request */}
           
           <div className={styles.separatorShort}>
             <div className={styles.sepLine} />
@@ -167,7 +167,7 @@ export default function OurStory() {
                 <div className={styles.quoteText}>
                   We don&apos;t just design your space.<br/>We ensure it is executed exactly as designed.&rdquo;
                 </div>
-                <div className={styles.quoteAuthor}>The Spatial Edit</div>
+                {/* quote author removed per request */}
               </div>
             </div>
           </div>

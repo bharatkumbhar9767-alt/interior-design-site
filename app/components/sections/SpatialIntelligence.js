@@ -65,12 +65,7 @@ const cards = [
 export default function SpatialIntelligence() {
   return (
     <section id="spatial" className={styles.section}>
-      {/* Left vertical line + decorations */}
-      <div className={styles.vline} />
-      <div className={`${styles.diamond} ${styles.diaTop}`} />
-      <div className={`${styles.diamond} ${styles.diaMid}`} />
-      <div className={`${styles.diamond} ${styles.diaBot}`} />
-      <div className={styles.sideLabel}>The Spatial Edit</div>
+      {/* Side decorations removed per request */}
 
       <div className={styles.inner}>
         <div className={styles.grid}>

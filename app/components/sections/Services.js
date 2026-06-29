@@ -5,6 +5,7 @@ import styles from './Services.module.css';
 const services = [
   {
     num: '01', title: 'Site Assessment',
+    preview: '/images/blueprint_desk.png',
     shortTitle: 'Site\nAssess',
     desc: 'We visit and analyse your site — documenting dimensions, light conditions, structural elements, and spatial constraints before planning begins.',
     icon: (
@@ -20,6 +21,7 @@ const services = [
   },
   {
     num: '02', title: 'Spatial Planning',
+    preview: '/images/floor_plan.png',
     shortTitle: 'Spatial\nPlanning',
     desc: 'Every room is planned for circulation, proportion and light — creating a spatial blueprint that guides every design decision downstream.',
     icon: (
@@ -38,6 +40,7 @@ const services = [
   },
   {
     num: '03', title: 'Design Concepts',
+    preview: '/images/blueprint_sketch_v2.png',
     shortTitle: 'Design\nConcepts',
     desc: 'We develop two or three distinct aesthetic directions — mood boards, material palettes, and spatial renders — for you to choose from.',
     icon: (
@@ -50,6 +53,7 @@ const services = [
   },
   {
     num: '04', title: 'Civil Work',
+    preview: '/images/dining_space.png',
     shortTitle: 'Civil\nWork',
     desc: 'Structural changes, demolition, flooring, false ceilings, plumbing, electrical — all coordinated and executed with precision.',
     icon: (
@@ -62,6 +66,7 @@ const services = [
   },
   {
     num: '05', title: 'Carpentry & Joinery',
+    preview: '/images/kitchen_modern.png',
     shortTitle: 'Carpentry\n& Joinery',
     desc: 'Custom wardrobes, kitchen cabinetry, storage solutions, and bespoke joinery — crafted to exact specifications for each space.',
     icon: (
@@ -73,6 +78,7 @@ const services = [
   },
   {
     num: '06', title: 'Furniture Selection',
+    preview: '/images/bedroom_luxury.png',
     shortTitle: 'Furniture\nSelection',
     desc: 'We source and specify every furniture piece — ensuring each one is proportioned correctly and contributes to the spatial narrative.',
     icon: (
@@ -84,6 +90,7 @@ const services = [
   },
   {
     num: '07', title: 'Decor & Styling',
+    preview: '/images/with_spatial_room.png',
     shortTitle: 'Decor\n& Styling',
     desc: 'Art, soft furnishings, lighting, accessories — the final layer that brings the aesthetic vision to life with careful curation.',
     icon: (
@@ -97,6 +104,7 @@ const services = [
   },
   {
     num: '08', title: 'Installation & Execution',
+    preview: '/images/floor_plan_rect.png',
     shortTitle: 'Installation\n& Execution',
     desc: 'We manage the full installation process — from coordinating contractors to quality-checking every detail before handover.',
     icon: (
@@ -109,6 +117,7 @@ const services = [
   },
   {
     num: '09', title: 'Handover & Aftercare',
+    preview: '/images/without_spatial_room.png',
     shortTitle: 'Handover\n& Aftercare',
     desc: 'A thorough walkthrough, documentation package, and ongoing aftercare support — because our relationship doesn\'t end at handover.',
     icon: (
@@ -125,19 +134,7 @@ export default function Services() {
 
   return (
     <section id="services" className={styles.section}>
-      {/* Left sidebar decoration */}
-      <div className={styles.sidebar}>
-        <div className={styles.sidebarLineTop} />
-        <div className={styles.sidebarText}>ONE SERVICE. TOTAL OWNERSHIP. NO EXCEPTIONS.</div>
-        <div className={styles.sidebarLineBottom} />
-        <div className={styles.sidebarStar}>
-          <svg viewBox="0 0 100 100" stroke="currentColor" strokeWidth="1.5" fill="none">
-            <circle cx="50" cy="50" r="18"/>
-            <path d="M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z" fill="currentColor"/>
-            <circle cx="50" cy="50" r="32" strokeDasharray="2 4"/>
-          </svg>
-        </div>
-      </div>
+      {/* sidebar removed per request */}
 
       <div className={styles.content}>
         <div className={styles.overline}>
@@ -181,10 +178,10 @@ export default function Services() {
                   <div className={styles.cardTitle}>{s.title}</div>
 
                   {/* Expanded description — visible on hover */}
-                  <div className={`${styles.cardDesc} ${isHovered ? styles.descVisible : ''}`}>
-                    {s.desc}
-                  </div>
+                  <div className={styles.cardDesc}>{s.desc}</div>
                 </div>
+                {/* Hover preview box (image) */}
+                <div className={styles.previewBox} style={{ backgroundImage: `url(${s.preview})` }} aria-hidden="true" />
               </div>
             );
           })}
