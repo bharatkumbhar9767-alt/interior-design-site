@@ -9,7 +9,7 @@
 
 .section {
   position: relative;
-  background: var(--cream);
+  background: var(--cream) url('/images/bg-sec-2.png') center bottom/cover no-repeat;
   padding: 86px 0 80px;
   overflow: hidden;
 }

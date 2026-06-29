@@ -14,13 +14,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Philosophy', href: '#spatial' },
-    { label: 'Process', href: '#process' },
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#about' },
-    { label: 'About', href: '#about' },
-    { label: 'Insights', href: '#insights' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Philosophy', href: '/#spatial' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Projects', href: '/#work' },
+    { label: 'Process', href: '/#process' },
+    { label: 'Insights', href: '/#insights' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -45,7 +45,7 @@ export default function Navbar() {
       </ul>
 
       <div className={styles.navRight}>
-        <a href="#contact" className={styles.navCta}>Book a Discovery Call&nbsp;→</a>
+        <a href="/#contact" className={styles.navCta}>Book a Discovery Call&nbsp;→</a>
         <button
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}

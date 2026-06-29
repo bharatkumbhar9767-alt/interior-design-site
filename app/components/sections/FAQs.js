@@ -33,13 +33,11 @@ export default function FAQs() {
         <div className={styles.topRight}>
           <div className={styles.topRightText}>QUESTIONS & ANSWERS</div>
           <div className={styles.topRightLine} />
-          <div className={styles.topRightNum}>13</div>
         </div>
       </div>
 
       {/* Left Sidebar Layout */}
       <div className={styles.vline} />
-      <div className={styles.sideNum}>13</div>
       <div className={styles.sideText1}>SECTION</div>
       <div className={styles.sideDia}><svg viewBox="0 0 24 24"><path d="M12 0 C 12 10, 14 12, 24 12 C 14 12, 12 14, 12 24 C 12 14, 10 12, 0 12 C 10 12, 12 10, 12 0 Z" fill="var(--gold)"/></svg></div>
       <div className={styles.verticalText}>QUESTIONS. ANSWERED.</div>
@@ -83,14 +81,7 @@ export default function FAQs() {
           ))}
         </div>
       </div>
-      <div className={styles.archFooter}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M0,100 L0,0 C250,80 750,80 1000,0 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="1.5" vectorEffect="non-scaling-stroke"/>
-        </svg>
-        <div className={styles.archDecor}>
-          <div className={styles.archStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="#b4904f"/></svg></div>
-        </div>
-      </div>
+     
     </section>
   );
 }

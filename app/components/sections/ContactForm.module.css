@@ -1,4 +1,4 @@
-.section{position:relative;padding:5vh 5vw 0;background:var(--cream);display:flex;flex-direction:column;overflow:hidden;min-height:100vh;}
+.section{position:relative;padding:5vh 5vw 0;background:var(--cream) url('/images/bg-sec-con.png') center calc(100% + 60px)/cover no-repeat;display:flex;flex-direction:column;overflow:hidden;min-height:auto;}
 .topBar {display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-bottom: 40px; padding: 0 5vw;}
 .topLeft { display: flex; align-items: flex-start; gap: 12px; }
 .logoTS { margin-right: 8px; }
@@ -33,7 +33,7 @@
 .centerStar svg{width:12px;height:12px;}
 .content{position:relative;z-index:2;width:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;flex:1;}
 .split{display:flex;align-items:stretch;margin-top:5vh;flex:1;margin-bottom:80px;gap:0;}
-.leftCol{flex:1;padding-right:5vw;display:flex;flex-direction:column;justify-content:center;}
+.leftCol{flex:1;padding-right:5vw;display:flex;flex-direction:column;justify-content:flex-start;padding-top:0px;margin-top:-20px;}
 .title{font-family:var(--serif);font-size:clamp(40px,5.5vw,70px);line-height:1.1;color:var(--dark);font-weight:400;margin-bottom:24px;}
 .title span{color:var(--gold);font-style:italic;}
 .desc{font-size:15px;line-height:1.6;color:var(--mid);margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(180,144,79,0.3);max-width:400px;}

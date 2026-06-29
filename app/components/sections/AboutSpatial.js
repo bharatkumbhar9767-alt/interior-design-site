@@ -44,9 +44,10 @@ export default function AboutSpatial() {
         <div className={styles.right}>
           <div className={styles.blueprintWrap}>
             <Image
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
+              src="/images/floor_plan.png"
               alt="Spatial Blueprint"
               fill
+              priority
               style={{objectFit:'cover', objectPosition:'center', borderRadius:'inherit', mixBlendMode:'multiply', opacity:0.95}}
             />
             {/* Floating info cards */}
@@ -69,19 +70,6 @@ export default function AboutSpatial() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className={styles.conclusion}>
-        <div className={styles.luxuryDivider}>
-          <svg viewBox="0 0 1000 250" preserveAspectRatio="none">
-            <path d="M-50,250 Q500,-100 1050,250" fill="none" stroke="var(--gold)" strokeWidth="1.5" />
-            <polygon points="500,75 504,79 500,83 496,79" fill="var(--gold)" />
-          </svg>
-        </div>
-        <p>
-          With these three solved, we begin designing your home<br />
-          to be both beautiful and functional.
-        </p>
       </div>
     </section>
   );

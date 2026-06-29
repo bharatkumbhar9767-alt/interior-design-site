@@ -1,0 +1,479 @@
+.section {
+  position: relative;
+  width: 100%;
+  background: var(--cream);
+  color: var(--dark);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.15;
+  color: var(--dark);
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.title span {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto;
+  width: 200px;
+}
+
+.sepLine {
+  height: 1px;
+  flex: 1;
+  background: rgba(180, 144, 79, 0.4);
+}
+
+.sepDia {
+  margin: 0 12px;
+}
+
+.sepDia svg {
+  width: 10px;
+  height: 10px;
+  fill: var(--gold);
+}
+
+/* 1. Who We Are */
+.whoWeAre {
+  position: relative;
+  padding-top: calc(var(--nav-h) + 100px);
+  padding-bottom: 120px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.bgImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(244, 237, 224, 0.95) 0%,
+    rgba(244, 237, 224, 0.7) 40%,
+    rgba(244, 237, 224, 0.95) 100%
+  );
+}
+
+.introBlock {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+/* Vertical Gold Line Decor */
+.vLine {
+  position: absolute;
+  left: 5vw;
+  top: var(--nav-h);
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(180, 144, 79, 0.35) 0%,
+    rgba(180, 144, 79, 0.35) 40%,
+    rgba(180, 144, 79, 0.0) 47%,
+    rgba(180, 144, 79, 0.0) 53%,
+    rgba(180, 144, 79, 0.35) 60%,
+    rgba(180, 144, 79, 0.35) 100%
+  );
+  z-index: 2;
+}
+
+/* Diamond markers */
+.heroDia {
+  position: absolute;
+  left: calc(5vw - 5px);
+  width: 10px; height: 10px;
+  border: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+  background: var(--cream);
+  z-index: 3;
+}
+.heroDia::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px; height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+.diaTop { top: calc(var(--nav-h) + 24px); }
+.diaBot { bottom: 32px; }
+
+/* Scroll label */
+.heroScroll {
+  position: absolute;
+  left: 5vw;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 200;
+  letter-spacing: 0.36em;
+  color: var(--dark);
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 4;
+  opacity: 0.6;
+  background: var(--cream);
+  padding: 2px 10px;
+}
+
+/* Intro Layering */
+.introBoxLayer {
+  background: rgba(244, 237, 224, 0.6);
+  border: 1px solid rgba(180, 144, 79, 0.2);
+  padding: 60px 40px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.titleLine {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 32px;
+}
+
+/* Decorative arcs */
+.heroArcs {
+  position: absolute;
+  top: 0; left: 0;
+  width: 52%; height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* 2. Mission & 3. Vision */
+.missionVision {
+  padding: 100px 0;
+  background: var(--cream);
+  position: relative;
+}
+
+/* Subtle background lines for MV */
+.missionVision::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(180, 144, 79, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 144, 79, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.mvCard {
+  background: #fff;
+  padding: 60px;
+  border: 1px solid rgba(180, 144, 79, 0.2);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+
+/* Corner details for mvCard */
+.mvCard::before, .mvCard::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--gold);
+}
+.mvCard::before {
+  top: 10px; left: 10px;
+  border-right: none; border-bottom: none;
+}
+.mvCard::after {
+  bottom: 10px; right: 10px;
+  border-left: none; border-top: none;
+}
+
+/* Faint background icon */
+.mvBgIcon {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mvIcon {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.mvIcon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--gold);
+  fill: none;
+}
+
+/* 4. What We Do */
+.whatWeDo {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.compassBg {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.serviceItem {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.serviceIcon {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.serviceIcon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.serviceTitle {
+  font-family: var(--serif);
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--dark);
+}
+
+.serviceDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+/* 5. Why Choose Us */
+.whyChooseUs {
+  padding: 120px 0;
+  background: var(--dark);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.floorPlanBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.whyChooseUs .title, .whyChooseUs .desc {
+  color: var(--cream);
+}
+
+.whyChooseUs .title span {
+  color: var(--gold);
+}
+
+.whyList {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.whyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(180, 144, 79, 0.2);
+}
+
+.whyItem:last-child {
+  border-bottom: 1px solid rgba(180, 144, 79, 0.2);
+}
+
+.whyNum {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--gold);
+  width: 60px;
+  font-style: italic;
+}
+
+.whyContent h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.whyContent p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(244, 237, 224, 0.7);
+  max-width: 600px;
+}
+
+/* 6. Meet Our Team */
+.meetOurTeam {
+  padding: 140px 0;
+  position: relative;
+}
+
+.foundersBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  margin-top: 80px;
+}
+
+.founderRow {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.founderRowReverse {
+  flex-direction: row-reverse;
+}
+
+.founderImg {
+  flex: 1;
+  position: relative;
+  height: 600px;
+  background: #e6e0d4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.founderImgPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  color: rgba(0,0,0,0.2);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.founderInfo {
+  flex: 1;
+}
+
+.founderName {
+  font-family: var(--serif);
+  font-size: 40px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.founderRole {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.founderBio {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--mid);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mvGrid { grid-template-columns: 1fr; gap: 40px; }
+  .servicesGrid { grid-template-columns: repeat(2, 1fr); }
+  .founderRow, .founderRowReverse { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 32px; }
+  .servicesGrid { grid-template-columns: 1fr; }
+  .whyItem { flex-direction: column; gap: 16px; }
+  .founderRow, .founderRowReverse { flex-direction: column; }
+  .founderImg { width: 100%; height: 400px; }
+  .mvCard { padding: 40px 20px; }
+}

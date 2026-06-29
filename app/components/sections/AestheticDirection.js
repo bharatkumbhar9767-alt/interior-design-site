@@ -92,16 +92,7 @@ export default function AestheticDirection() {
         </div>
       </div>
 
-      <div className={styles.archFooter}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M0,100 L0,70 Q250,110 500,10 Q750,110 1000,70 L1000,100 Z" fill="#111" stroke="rgba(180,144,79,0.5)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-        </svg>
-        <div className={styles.archDecor}>
-          <svg viewBox="0 0 24 24" className={styles.archArrow}><polyline points="15 18 9 12 15 6" stroke="rgba(180,144,79,0.6)" strokeWidth="1.5" fill="none"/></svg>
-          <div className={styles.archStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="#b4904f"/></svg></div>
-          <svg viewBox="0 0 24 24" className={styles.archArrow}><polyline points="9 18 15 12 9 6" stroke="rgba(180,144,79,0.6)" strokeWidth="1.5" fill="none"/></svg>
-        </div>
-      </div>
+      {/* footer divider removed per request */}
     </section>
   );
 }

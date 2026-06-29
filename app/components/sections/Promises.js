@@ -33,7 +33,13 @@ export default function Promises() {
         <div className={styles.sidebarLineBottom} />
       </div>
       <div className={styles.headerRight}>
-        <div className={styles.hrTop}><div className={styles.hrLabel}>OUR PROMISES</div><div className={styles.hrNum}>08</div></div>
+        <div className={styles.hrTop}>
+          <div className={styles.hrLabel}>OUR PROMISES</div>
+          <div className={styles.hrDivider}>
+            <div className={styles.hrLine}/><div className={styles.hrDia}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg></div><div className={styles.hrLine}/>
+          </div>
+          <div className={styles.hrNum}>08</div>
+        </div>
       </div>
       <div className={styles.content}>
         <div className={styles.titleBlock}>
@@ -44,8 +50,8 @@ export default function Promises() {
         </div>
         <p className={styles.subtitle}>CLEAR PROCESS. CONSTANT COMMUNICATION. COMPLETE OWNERSHIP.</p>
         <div className={styles.cards}>
-          {promises.map((p) => (
-            <div className={styles.card} key={p.title}>
+          {promises.map((p, i) => (
+            <div className={`${styles.card} ${i === 0 ? styles.activeCard : ''}`} key={p.title}>
               <div className={styles.cardIcon}>{p.icon}</div>
               <div className={styles.cardTitle}>{p.title.includes('<br/>') ? <>{p.title}</> : p.title}</div>
               <div className={styles.cardDivider}><div className={styles.cdLine}/><div className={styles.cdDia}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg></div><div className={styles.cdLine}/></div>
@@ -55,8 +61,15 @@ export default function Promises() {
         </div>
       </div>
       <div className={styles.archFooter}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,100 L0,50 Q250,90 500,0 Q750,90 1000,50 L1000,100 Z" fill="#111" stroke="var(--gold)" strokeWidth="2" vectorEffect="non-scaling-stroke"/></svg>
-        <div className={styles.archStar}><svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg></div>
+        <svg className={styles.archSvg} viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+          <path d="M0 120L1440 120V0C1440 0 1140 119.5 720 119.5C300 119.5 0 0 0 0V120Z" fill="#111" />
+          <path d="M0 0C300 119.5 1140 119.5 1440 0" stroke="var(--gold)" strokeWidth="1" strokeOpacity="0.3" />
+        </svg>
+        <div className={styles.archStar}>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10Z" fill="var(--gold)" opacity="0.8"/>
+          </svg>
+        </div>
         <div className={styles.archContent}>
           <div className={styles.footerText}>COMMITTED TO TRANSPARENCY. DRIVEN BY ACCOUNTABILITY.</div>
           <div className={styles.footerBold}>DELIVERED WITH INTEGRITY.</div>

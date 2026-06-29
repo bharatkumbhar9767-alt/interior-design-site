@@ -171,15 +171,7 @@ export default function Process() {
         </div>
       </div>
 
-      {/* Dark arch footer */}
-      <div className={styles.archFooter}>
-        <svg className={styles.archSvg} viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M0,100 L0,50 Q250,90 500,0 Q750,90 1000,50 L1000,100 Z" fill="#111" stroke="var(--gold)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-        </svg>
-        <div className={styles.archStar}>
-          <svg viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="var(--gold)"/></svg>
-        </div>
-      </div>
+      {/* footer divider removed per request */}
     </section>
   );
 }
